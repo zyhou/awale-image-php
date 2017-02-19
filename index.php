@@ -11,7 +11,7 @@ $img->rectangle(10, 100, 390, 270, function ($draw) {
     $draw->background('#f39c12');
 });
 
-$arr = array(4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4);
+$arr = array(0, 10, 5, 4, 4, 14, 4, 4, 4, 4, 4, 4);
 $arrtop = array_reverse(array_slice($arr, 6, 11));
 foreach($arrtop as $key=>$row){
 
@@ -20,7 +20,7 @@ foreach($arrtop as $key=>$row){
         $draw->background('#d35400');
     });
 
-    $img->text($row, 40 + $width, 160, function($font) {
+    $img->text(str_pad($row, 2, ' ', STR_PAD_LEFT), 35 + $width, 160, function($font) {
         $font->size(30);
         $font->file('arial.ttf');
         $font->color('#f1c40f');
@@ -35,7 +35,7 @@ foreach($arrbottom as $key=>$row){
         $draw->background('#d35400');
     });
 
-    $img->text($row, 40 + $width, 230, function($font) {
+    $img->text(str_pad($row, 2, ' ', STR_PAD_LEFT), 35 + $width, 230, function($font) {
         $font->size(30);
         $font->file('arial.ttf');
         $font->color('#f1c40f');
